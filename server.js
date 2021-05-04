@@ -18,7 +18,7 @@ app.use( logger )
 
     // NOTE Same-origin Test Page
         app.get('/', (req, res) => {
-            res.send('<h1>Open your browser console, and put the following in the console:</h1>\n<code style="color: #C7254E; background: #F9F2F4; margin-left: 20px; padding: 10px;">fetch("http://localhost:3000/api/simple/no-origin")</code>')
+            res.send('<h1>Open your browser console, and put the following in the console:</h1>\n<code style="color: #C7254E; background: #F9F2F4; margin-left: 20px; padding: 10px;">fetch("https://cors-tutorial-server.herokuapp.com/api/simple/no-origin")</code>')
         })
 
     // NOTE Simple Request
@@ -108,5 +108,5 @@ app.use( logger )
 
 /* NOTE App Listening */
 app.listen(PORT, () => {
-    console.log(`App is listening at port ${PORT}\nhttp://localhost:${PORT}`);
+    console.log(`App is listening at port ${PORT}`);
 })
