@@ -42,7 +42,7 @@ app.use( logger )
 
         // origin matching
         app.get('/api/simple/good-origin', (req, res) => {
-            res.header("Access-Control-Allow-Origin", "https://www.chuckchoi.me")
+            res.header("Access-Control-Allow-Origin", "https://chuckchoiboi.github.io")
             res.status(200).json({ title: 'Hello World!' })
         })
 
@@ -55,13 +55,13 @@ app.use( logger )
 
         // options origin matching, but method not listed
         app.options('/api/preflight/bad-method', (req, res) => {
-            res.header("Access-Control-Allow-Origin", "https://www.chuckchoi.me")
+            res.header("Access-Control-Allow-Origin", "https://chuckchoiboi.github.io")
             res.status(204).end()
         })
 
         // options origin matching, method listed, but delete route's origin not matching
         app.options('/api/preflight/req-bad-origin', (req, res) => {
-            res.header("Access-Control-Allow-Origin", "https://www.chuckchoi.me")
+            res.header("Access-Control-Allow-Origin", "https://chuckchoiboi.github.io")
             res.header("Access-Control-Allow-Methods", "DELETE")
             res.status(204).end()
         })
@@ -74,13 +74,13 @@ app.use( logger )
         // options header matching, method listed, delete route's origin matching
 
         app.options('/api/preflight/good-request', (req, res) => {
-            res.header("Access-Control-Allow-Origin", "https://www.chuckchoi.me")
+            res.header("Access-Control-Allow-Origin", "https://chuckchoiboi.github.io")
             res.header("Access-Control-Allow-Methods", "DELETE")
             res.status(204).end()
         })
         
         app.delete('/api/preflight/good-request', (req, res) => {
-            res.header("Access-Control-Allow-Origin", "https://www.chuckchoi.me")
+            res.header("Access-Control-Allow-Origin", "https://chuckchoiboi.github.io")
             res.status(200).json({ title: 'Goodbye World!' })
         })
 
@@ -94,13 +94,13 @@ app.use( logger )
 
         // origin matching, but Access-Controls-Allow-Credentials missing
         app.get('/api/credentialed/good-origin', (req, res) => {
-            res.header("Access-Control-Allow-Origin", "https://www.chuckchoi.me")
+            res.header("Access-Control-Allow-Origin", "https://chuckchoiboi.github.io")
             res.status(200).json({ title: 'Hello World!' })
         })
 
         // origin matching, Access-Controls-Allow-Credentials set to true
         app.get('/api/credentialed/good-request', (req, res) => {
-            res.header("Access-Control-Allow-Origin", "https://www.chuckchoi.me")
+            res.header("Access-Control-Allow-Origin", "https://chuckchoiboi.github.io")
             res.header("Access-Control-Allow-Credentials", "true")
             res.status(200).json({ title: 'Hello World!' })
         })
